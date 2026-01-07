@@ -1,2 +1,2 @@
 cloud_provider: aws
-analytics_engine: redshift
+analytics_engine: bigquery
