@@ -1,2 +1,20 @@
 cloud_provider: aws
-analytics_engine: redshift
+region: us-east-1
+environment: staging
+analytics:
+  engine: bigquery
+  project_id: demo-analytics-project
+  dataset: reporting
+  location: US
+  refresh_schedule: daily
+storage:
+  raw_data_bucket: aws-raw-data
+  processed_data_bucket: aws-processed-data
+  archive_bucket: aws-archive-data
+pipelines:
+  ingest_source: s3
+  transform_tool: dbt
+  load_target: bigquery
+monitoring:
+  metrics_enabled: true
+  alerts_enabled: false
